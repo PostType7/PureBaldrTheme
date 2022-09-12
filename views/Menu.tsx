@@ -3,8 +3,8 @@ import { NavItem } from "components/native/navigation";
 
 export const Menu: React.FC = () => {
   return <VStack>
-    <NavItem color="light" text="Menu 1"/>
-    <NavItem color="light" text="Menu 2"/>
+    <NavItem color="light" text="Dashboard" href="/dashboard"/>
+    <NavItem color="light" text="Users" href="/users"/>
   </VStack>;
 };
 
