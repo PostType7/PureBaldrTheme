@@ -1,25 +1,18 @@
-import { Card, HStack, Image } from "components/native/layout";
-import { TextCell, TextSM } from "components/native/typo";
+import { HStack, Image } from "components/themes/NativeTheme/layout";
+import { TextCell } from "./TextCell";
+
 
 interface Props {
-  nick?: string;
-  shortDescription?: string;
-  longDescription?: string;
+  title?: string;
+  subTitle?: string;
   url?: string | URL;
   size?: string;
 }
-const Avatar: React.FC<Props> = ({
-  nick,
-  shortDescription,
-  longDescription,
-  url,
-  size,
-}) => {
+export const Avatar: React.FC<Props> = ({ title, subTitle, url, size }) => {
   return (
     <HStack>
       <Image url={url} size={size} />
-      <TextCell title={nick} subTitle="22 June 2011" className="flex-1" />
+      <TextCell title={title} subTitle={subTitle} className="flex-1" />
     </HStack>
   );
 };
-export default Avatar;
