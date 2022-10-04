@@ -9,15 +9,15 @@ export const useThemeStore = create((set) => ({
       text: "",
       status: "success",
     },
-    modal:{
-      open:false,
-      body:{}
+    modal: {
+      open: false,
+      body: {},
     },
     currentUser: {
       id: null,
       username: null,
     },
-    dropdown:false,
+    dropdown: false,
   },
   setAttr: (_in: { path: string; value: any }) =>
     set(
@@ -28,7 +28,16 @@ export const useThemeStore = create((set) => ({
   pushElement: (_in: { path: string; element: any }) =>
     set(
       produce((_) => {
-        deepGet(_,_in.path).push(_in.element)
+        deepGet(_, _in.path).push(_in.element);
       })
     ),
+    removeElement: (_in: { path: string; index: string }) =>
+    set(
+      produce((_) => {
+        deepGet(_, _in.path).splice(_in.index, 1);
+
+      
+      })
+    ),
+  
 }));

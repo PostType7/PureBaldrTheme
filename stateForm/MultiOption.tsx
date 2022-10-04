@@ -24,13 +24,15 @@ export const MultiOption: React.FC<Props> = ({
         defaultChecked={form[1][form[0]].includes(value)}
         onClick={(e: any) => {
           if (e.target.checked) {
-            form[1][form[0]].push(value);
+            let out = Object.assign({}, form[1])
+            out[form[0]].push(value);
             form[2](Object.assign({}, form[1]));
           } else {
-            form[1][form[0]] = form[1][form[0]].filter(
+            let out = Object.assign({}, form[1])
+            out[form[0]] = form[1][form[0]].filter(
               (e: string) => e !== value
             );
-            form[2](Object.assign({}, form[1]));
+            form[2](out);
           }
         }}
       />

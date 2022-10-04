@@ -25,11 +25,9 @@ const SidebarDashboardLayout: React.FC<Props> = ({
           {body}
         </VStack>
         <div className="col-span-3 ">
-          {/* <div className="sticky top-0 border "> */}
-            <VStack spacingY="md" spacingR="md" className="">
-              {sideBar}
-            </VStack>
-          {/* </div> */}
+          <VStack spacingY="md" spacingR="md" className="">
+            {sideBar}
+          </VStack>
         </div>
       </div>
     </div>

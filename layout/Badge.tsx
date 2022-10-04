@@ -1,26 +1,29 @@
-import { mixClass, gapMix, bgColorMix } from "helpers/P7mixClass";
+import { mixClass, gapMix, bgColorMix, textSizeMix } from "helpers/P7mixClass";
 
 interface Props {
-  spacing?: string;
+  size?: string;
   className?: string;
   text?: string;
   icon?: any;
-  bgColor?: string;
+  color?: string;
 }
 const Badge: React.FC<Props> = ({
   className = "",
-  spacing = "sm",
-  bgColor = "primary",
+  size = "sm",
+  color = "primary",
   text,
   icon,
 }) => {
   return (
     <div
       className={mixClass({
-        ["flex items-center text-white rounded-full py-1 px-3 text-sm"]: true,
+        ["flex items-center rounded-full py-1 px-3"]: true,
         [className]: true,
-        ...gapMix(spacing),
-        ...bgColorMix(bgColor),
+        'text-white' : color != 'light',
+        'text-dark' : color == 'light',
+        ...textSizeMix(size),
+        ...gapMix(size),
+        ...bgColorMix(color),
       })}
     >
       {text ? <div>{text}</div> : null}

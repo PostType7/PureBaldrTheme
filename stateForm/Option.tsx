@@ -21,10 +21,12 @@ export const Option: React.FC<Props> = ({
         id={`${form[0]}_${value}`}
         type="radio"
         defaultValue={value}
+        // defaultChecked={form[1][form[0]]===value}
         checked={form[1][form[0]]===value}
         onClick={(e: any) => {
-          form[1][form[0]] = value
-          form[2](Object.assign({}, form[1]));
+          let out:any = Object.assign({}, form[1])
+          out[form[0]] = value
+          form[2](out);
         }}
       />
       <div className="p-3">{children}</div>
