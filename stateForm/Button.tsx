@@ -1,4 +1,5 @@
 import {
+  bgHoverColorMix,
   bgMix,
   mixClass,
   paddingxMix,
@@ -29,11 +30,12 @@ export const Button: React.FC<Props> = ({
   <button
     type={type}
     className={mixClass({
-      "cursor-pointer transition duration-150 ease-in-out rounded-lg uppercase font-medium shadow-['8px 0px 0px 0px rgba(66, 68, 90, 1)']":
+      "cursor-pointer transition duration-75 ease-in-out rounded-lg uppercase font-medium shadow-['8px 0px 0px 0px rgba(66, 68, 90, 1)']":
         true,
       ...textHoverColorMix(hoverColor),
       ...textColorMix(color),
       ...bgMix(bg),
+      ...bgHoverColorMix(hoverColor? hoverColor : bg),
       "px-6 py-3": spacing === "sm",
       "px-8 py-4": spacing === "lg",
 
