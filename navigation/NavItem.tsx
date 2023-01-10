@@ -1,6 +1,5 @@
 import {
   mixClass,
-  paddingrMix,
   paddingxMix,
   paddingyMix,
   textColorMix,

@@ -52,7 +52,7 @@ export const SidebarVerticalDashboardLayout: React.FC<Props> = ({
         {sideBar && (
           <VStack
             paddingY="md"
-            spacingR="md"
+          
             className="bg-gray-50 mt-3 border-t border-r border-primary-200 hidden md:block w-96"
           >
             {sideBar}

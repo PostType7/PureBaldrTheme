@@ -24,7 +24,7 @@ export const SidebarDashboardLayout: React.FC<Props> = ({
         <VStack paddingY="md" className="flex-1">
           {body}
         </VStack>
-        <VStack paddingY="md" spacingR="md" className="hidden md:block w-96">
+        <VStack paddingY="md" className="hidden md:block w-96">
           {sideBar}
         </VStack>
       </div>

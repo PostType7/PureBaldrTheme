@@ -4,6 +4,5 @@ export type HStackType = {
   paddingX?: string;
   paddingY?: string;
   spacingL?: string;
-  spacingR?: string;
   mobile?: boolean;
 };
