@@ -1,4 +1,4 @@
-import { mixClass } from "helpers/P7mixClass";
+import { mixClass, textWeightMix } from "helpers/P7mixClass";
 import { Text } from "components/themes/PureBaldrTheme/typo";
 
 interface Props {
@@ -25,13 +25,12 @@ export const TextCell: React.FC<Props> = ({
     <div
       className={mixClass({
         "flex flex-col": true,
-        "gap-3":firstSize==='2xl',
-        "gap-3.5":firstSize==='3xl',
-        'gap-2.5': firstSize!==('2xl' || '3xl'),
+        "gap-3": firstSize === "2xl",
+        "gap-3.5": firstSize === "3xl",
+        "gap-1.5": firstSize !== ("2xl" || "3xl"),
         [className]: true,
       })}
     >
-      
       <Text
         size={firstSize}
         color={firstColor}
@@ -47,7 +46,7 @@ export const TextCell: React.FC<Props> = ({
         size={secondSize}
         className={mixClass({
           truncate: truncate,
-          "uppercase font-bold": secondWeight == "upbold",
+          ...textWeightMix(secondWeight),
         })}
         color="dark"
       >
