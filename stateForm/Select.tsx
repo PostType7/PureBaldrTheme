@@ -1,4 +1,4 @@
-import { VStack } from "../../NativeTheme/layout";
+import { VStack } from "../layout";
 import { FiChevronDown, FiX } from "react-icons/fi";
 import { useRef, useState } from "react";
 import { useOutsideAlerter } from "pages/_app";

@@ -11,7 +11,7 @@ export const ModalWrapper: React.FC<Props> = ({ className, children }) => {
     <div
       onClick={() => {
         setAttr({
-          path: "theme.modal.open",
+          path: "theme.modal.bodyTarget",
           value: false,
         });
       }}

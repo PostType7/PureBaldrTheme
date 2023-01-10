@@ -1,43 +1,59 @@
 import { mixClass } from "helpers/P7mixClass";
-import { Text } from "components/themes/NativeTheme/typo";
+import { Text } from "components/themes/PureBaldrTheme/typo";
 
 interface Props {
-  title?: string;
-  titleSize?: string;
-  subTitle?: string;
+  first?: string;
+  firstSize?: string;
+  firstColor?: string;
+  secondSize?: string;
+  second?: string;
   className?: string;
-  truncate?:boolean;
+  truncate?: boolean;
+  secondWeight?: string;
 }
 export const TextCell: React.FC<Props> = ({
-  title,
-  subTitle,
+  first,
+  second,
   className = "",
-  titleSize = "md",
+  firstSize = "xs",
+  firstColor = "",
+  secondSize = "sm",
   truncate = false,
+  secondWeight = "",
 }) => {
   return (
     <div
       className={mixClass({
-        "grid": true,
-        "gap-3": titleSize == "xxl",
+        "flex flex-col": true,
+        "gap-3":firstSize==='2xl',
+        "gap-3.5":firstSize==='3xl',
+        'gap-2.5': firstSize!==('2xl' || '3xl'),
         [className]: true,
       })}
     >
-      {titleSize == "md" ? (
-        <Text size="md" className={mixClass({
-          "leading-5 pb-1.5": true,
-          "truncate":truncate
-        })}>
-          {title}
-        </Text>
-      ) : null}
-      {titleSize == "xxl" ? <Text size="xxl">{title}</Text> : null}
-      <Text size="sm" className={mixClass({
-          "leading-4": true,
-          "truncate":truncate
-        })} color="dark">
-        {subTitle}
+      
+      <Text
+        size={firstSize}
+        color={firstColor}
+        className={mixClass({
+          "font-bold": firstSize == ("2xl" || "3xl"),
+          truncate: truncate,
+        })}
+      >
+        {first}
+      </Text>
+
+      <Text
+        size={secondSize}
+        className={mixClass({
+          truncate: truncate,
+          "uppercase font-bold": secondWeight == "upbold",
+        })}
+        color="dark"
+      >
+        {second}
       </Text>
     </div>
   );
 };
+export default TextCell;

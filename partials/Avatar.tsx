@@ -1,5 +1,6 @@
-import { HStack, Image } from "components/themes/NativeTheme/layout";
-import { TextCell } from "./TextCell";
+import { HStack, Image } from "components/themes/PureBaldrTheme/layout";
+import { TextCell } from ".";
+
 
 
 interface Props {
@@ -12,7 +13,7 @@ export const Avatar: React.FC<Props> = ({ title, subTitle, url, size }) => {
   return (
     <HStack>
       <Image url={url} size={size} />
-      <TextCell title={title} subTitle={subTitle} className="flex-1" />
+      <TextCell first={title} second={subTitle} className="flex-1" />
     </HStack>
   );
 };

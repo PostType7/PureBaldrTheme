@@ -9,7 +9,7 @@
     to selection
     http://jsfiddle.net/edisonator/2w35p/35/
 */
-import { VStack } from "components/themes/NativeTheme/layout";
+import { VStack } from "components/themes/PureBaldrTheme/layout";
 import { formSet, fieldKey } from "helpers/P7StateForm";
 import { FiBold, FiItalic, FiUnderline } from "react-icons/fi";
 

@@ -1,1 +1,1 @@
-export * from "./PaginationType";
+export * from "./HStackType";

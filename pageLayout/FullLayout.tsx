@@ -1,4 +1,4 @@
-import { Hr } from "components/themes/NativeTheme/layout";
+import { Hr } from "components/themes/PureBaldrTheme/layout";
 
 interface Props {
   menu: any;
